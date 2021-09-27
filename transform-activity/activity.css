@@ -1,3 +1,24 @@
-main {
+body  {
+    font-family: 'Josefin Sans', sans-serif;
+  }
 
+main {
+    background-color: #66cdaa;
+    /* transform: skew(-10deg,-10deg); */
+    transform: skewX(-10deg) rotate(-10deg);
+    margin: 35px auto auto auto;
+    padding: 100px 250px 100px 250px;
+    width: 600px;
+    /* display: flex; 
+    align-content: center; */
 }
+
+h1 {
+    margin-left: 385px;
+}
+
+main > div {
+    width: 50%;
+    margin: auto;
+    padding: 10%;
+  }

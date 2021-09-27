@@ -1,1 +1,182 @@
+button {
+    background-color: ghostwhite;
+    transition: 1s;
+}
+button:hover {
+    background-color: cornflowerblue;
+    color: ghostwhite;
+    /* transition: 2s; */
+}
+/*  
+.container { commented out
+    z-index: 0;
+} 
+ .caption > div h1 { commented out
+    color: white;
+    position: absolute;
+    left: 300px;
+    top: 700px;
+    z-index: 2;
+} 
+ h1, p { commented out
+    margin: 0;
+    padding: 0 0 0 0;
+} 
+p {
+    display: inline-block;
+    width: 900px;
+    font-size: 20px;
+    padding-top: 0;
+}
+.caption {
+    position: relative;
+    overflow: hidden;
 
+    transform: translateZ(0);
+}
+.caption::before {
+    content: '  ';
+    position: absolute;
+    width: 929px;
+    height: 620px;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 117px;
+    background: transparent;
+    transition: background 1s ease-out;
+}
+.caption:hover::before {
+    background: rgb(0, 0, 0, .5);
+}
+p { commented out
+    display: block;
+    color: white;
+    position: relative;
+    align-content: center;
+    width: 875px;
+    top: 0;
+    margin: 0px;
+    z-index: 1;
+    opacity: 0;
+    transition-property: opacity 2s;
+}
+.caption_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding-top: 50px;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 1s ease-out;
+}
+.caption:hover .caption_overlay {
+    transform: translateY(0);
+}
+.title {
+    position: absolute;
+    top: 0;
+    left: 150px;
+    padding-left: 10px;
+    padding-bottom: 25px;
+    transform: translateY(calc(-100% - 50px));
+}
+.caption:hover .title {
+    transform: translateY(calc(100%));
+} */
+
+/* copied from solution code - could not get final pieces to align properly with mine */
+body {
+    font: normal 16px/1.5 Arial, sans-serif;
+}
+.title { 
+    align-content: center; /* added for formatting */
+    margin: 10px;
+}
+.caption__overlay__title {
+    margin: 0;
+    padding: 0 0 10px;
+    text-align: left;
+}
+
+p {
+    margin: 0;
+    padding: 60px 0 0;  /* changed top padding for spacing to match activity prompt */
+    text-align: center; /* centered text to match activity prompt */
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 900px; /* changed width */
+}
+
+/*
+ * Caption component
+ */
+.caption {
+    position: relative;
+    overflow: hidden;
+
+    /* Only the -webkit- prefix is required these days */
+    /* -webkit-transform: translateZ(0); removed to see how it changed - it didnt*/
+            transform: translateZ(0);
+}
+
+.caption::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    transition: background 1s ease-out; /* changed transition to 1s */
+}
+
+.caption:hover::before {
+    background: rgba(0, 0, 0, .5);
+}
+
+.caption__media {
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.caption__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    color: white;
+
+    /* -webkit-transform: translateY(100%); */
+            transform: translateY(100%);
+
+    /* transition: -webkit-transform 1s ease-out; changed transition to 1s */
+    transition:         transform 1s ease-out; /* changed transition to 1s */
+}
+
+.caption:hover .caption__overlay {
+    /* -webkit-transform: translateY(0); */
+            transform: translateY(0);
+}
+
+.caption__overlay__title {
+    /* -webkit-transform: translateY( -webkit-calc(-100% - 10px) ); */
+            transform: translateY( calc(-100% - 10px) );
+
+    /* transition: -webkit-transform 1s ease-out; changed transition to 1s */
+    transition:         transform 1s ease-out; /* changed transition to 1s */
+}
+
+.caption:hover .caption__overlay__title {
+    /* -webkit-transform: translateY(0); */
+            transform: translateY(0);
+            /* padding: 0 0 0; */
+}
